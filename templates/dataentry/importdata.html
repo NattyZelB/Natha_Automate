@@ -1,23 +1,8 @@
 
-<!DOCTYPE html>
-{% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Importdata</title>
-  <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+{% extends 'base.html' %}
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-  <script src="{% static 'js/custom.js' %}"></script>
-</head>
-<body>
-  <div class="container">
+{% block content %}
+  <div class="container mt-5 alert-primary shadow" style="max-width: 600px; padding: 50px; border-radius:10px;">
     <h3 class="text-center">Import Data to data tables</h3>
     <form action="{%url 'import_data'%}" method="POST" enctype="multipart/form-data" style="max-width: 600px; margin: auto; padding-top: 50px;">
       {% csrf_token %}
@@ -35,7 +20,7 @@
           {% endfor %}
         </select>
       </div>
-  <div>
+  <div class="form-group">
     <input type="submit" value="Import Data" class="btn btn-primary">
   </div>
       {% include 'alerts.html'%}
@@ -43,5 +28,5 @@
 
     </form>
   </div>
-</body>
-</html>
+
+{% endblock %}
