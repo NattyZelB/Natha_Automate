@@ -1,3 +1,3 @@
-setTimeout(function()){
+setTimeout(function(){
     $('#messages').fadeOut('slow')
 }, 5000)
