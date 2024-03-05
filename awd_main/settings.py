@@ -26,7 +26,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -167,6 +167,8 @@ CKEDITOR_CONFIGS = {
     },
 }
 
+CSRF_TRUSTED_ORIGINS = ['https://6f68-2a02-a03f-eb0b-7b00-dd86-a160-8a37-3123.ngrok-free.app']
+BASE_URL = 'https://6f68-2a02-a03f-eb0b-7b00-dd86-a160-8a37-3123.ngrok-free.app'
 
 EMAIL_BACKEND = "anymail.backends.sendinblue.EmailBackend"
 ANYMAIL = {

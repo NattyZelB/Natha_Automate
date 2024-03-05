@@ -24,7 +24,7 @@ def import_data_task(file_path, model_name):
     mail_subject = 'Import data completed'
     message = 'Your data import has been Completed'
     to_email = settings.DEFAULT_TO_EMAIL
-    send_email_notification(mail_subject, message, to_email)
+    send_email_notification(mail_subject, message, [to_email])
     return 'Data imported successfully!'
 
 @app.task
@@ -40,7 +40,7 @@ def export_data_task(model_name):
     mail_subject = 'Export data completed'
     message = 'Your data exported successfully, please find in attachment..'
     to_email = settings.DEFAULT_TO_EMAIL
-    send_email_notification(mail_subject, message, to_email, attachment=file_path)
+    send_email_notification(mail_subject, message, [to_email], attachment=file_path)
     return 'Data exported successfully!'
 
 
